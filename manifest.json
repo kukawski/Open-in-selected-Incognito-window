@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "Open link in selected Incognito window",
+    "version": "1.0",
+    "description": "Link context menu for selecting Incognito window to open the link in",
+    "permissions": [
+        "tabs", "menus", "contextMenus"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    }
+}
