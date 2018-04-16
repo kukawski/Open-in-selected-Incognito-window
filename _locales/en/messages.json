@@ -1,0 +1,11 @@
+{
+    "extensionName": {
+        "message": "Open link in selected Private window"
+    },
+    "extensionDescription": {
+        "message": "Context menu entry for links for choosing Private window to open the link in"
+    },
+    "openLinkInSelectedPrivateWindow": {
+        "message": "Open Link in Private Window"
+    }
+}
