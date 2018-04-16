@@ -1,0 +1,11 @@
+{
+    "extensionName": {
+        "message": "Otwórz odnośnik w wybranym oknie prywatnym"
+    },
+    "extensionDescription": {
+        "message": "Rozszerzenie menu kontekstowego odnośników do wybierania prywatnego okna, w którym zostanie otwarty odnośnik"
+    },
+    "openLinkInSelectedPrivateWindow": {
+        "message": "Otwórz odnośnik w Oknie Prywatnym"
+    }
+}
