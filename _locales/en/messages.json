@@ -7,5 +7,8 @@
     },
     "openLinkInSelectedPrivateWindow": {
         "message": "Open Link in Private Window"
+    },
+    "openLinkInNewPrivateWindow": {
+        "message": "Open Link in New Private Window"
     }
 }
