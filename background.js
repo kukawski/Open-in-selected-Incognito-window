@@ -1,7 +1,6 @@
 const populateContextMenu = async () => {
     await browser.menus.removeAll();
     let windows = await browser.windows.getAll({
-        populate: true,
         windowTypes: ['normal']
     });
 
