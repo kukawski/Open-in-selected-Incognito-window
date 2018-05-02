@@ -1,5 +1,6 @@
 const populateContextMenu = async () => {
     await browser.menus.removeAll();
+
     let windows = await browser.windows.getAll({
         windowTypes: ['normal']
     });
@@ -38,10 +39,6 @@ const populateContextMenu = async () => {
     });
 }
 
-browser.windows.onCreated.addListener(() => populateContextMenu());
-browser.windows.onRemoved.addListener(() => populateContextMenu());
-browser.tabs.onActivated.addListener(() => populateContextMenu());
-
 browser.menus.onClicked.addListener((info, tab) => {
     if (info.menuItemId.startsWith('incognito-selection-window-')) {
         browser.tabs.create({
@@ -56,4 +53,15 @@ browser.menus.onClicked.addListener((info, tab) => {
     }
 });
 
-populateContextMenu();
+if (browser.menus.onShown && browser.menus.refresh) {
+    browser.menus.onShown.addListener(async (info, tab) => {
+        await populateContextMenu();
+        browser.menus.refresh();
+    });
+} else {
+    browser.windows.onCreated.addListener(() => populateContextMenu());
+    browser.windows.onRemoved.addListener(() => populateContextMenu());
+    browser.tabs.onActivated.addListener(() => populateContextMenu());
+
+    populateContextMenu();
+}
