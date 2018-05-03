@@ -12,5 +12,9 @@
             "background.js"
         ]
     },
+    "icons": {
+        "48": "icon.svg",
+        "96": "icon.svg"
+    },
     "default_locale": "en"
 }
