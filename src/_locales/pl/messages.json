@@ -6,9 +6,9 @@
         "message": "Rozszerzenie menu kontekstowego odnośników do wybierania prywatnego okna, w którym zostanie otwarty odnośnik"
     },
     "openLinkInSelectedPrivateWindow": {
-        "message": "Otwórz odnośnik w Oknie Prywatnym"
+        "message": "Otwórz odnośnik w oknie prywatnym"
     },
     "openLinkInNewPrivateWindow": {
-        "message": "Otwórz odnośnik w nowym Oknie Prywatnym"
+        "message": "Otwórz odnośnik w nowym oknie w trybie prywatnym"
     }
 }
