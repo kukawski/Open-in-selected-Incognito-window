@@ -14,10 +14,10 @@ const populateContextMenu = async () => {
     });
 
     if (windows.length) {
-        windows.forEach((w) => {
+        windows.forEach((window) => {
             browser.contextMenus.create({
-                id: `incognito-selection-window-${w.id}`,
-                title: `${w.title}`,
+                id: `incognito-selection-window-${window.id}`,
+                title: `${window.title.replace(/ ?-[^-]+$/, '')}`,
                 contexts: ['link'],
                 parentId: rootMenuItemId
             });
