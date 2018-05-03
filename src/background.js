@@ -7,7 +7,7 @@ const populateContextMenu = async () => {
 
     windows = windows.filter(w => w.incognito);
 
-    await browser.contextMenus.create({
+    const rootMenuItemId = browser.contextMenus.create({
         id: `incognito-selection`,
         title: browser.i18n.getMessage('openLinkInSelectedPrivateWindow'),
         contexts: ['link']
@@ -19,7 +19,7 @@ const populateContextMenu = async () => {
                 id: `incognito-selection-window-${w.id}`,
                 title: `${w.title}`,
                 contexts: ['link'],
-                parentId: 'incognito-selection'
+                parentId: rootMenuItemId
             });
         });
 
@@ -27,7 +27,7 @@ const populateContextMenu = async () => {
             id: 'separator',
             type: 'separator',
             contexts: ['link'],
-            parentId: 'incognito-selection'
+            parentId: rootMenuItemId
         });
     }
 
@@ -35,7 +35,7 @@ const populateContextMenu = async () => {
         id: `new-incognito-window`,
         title: browser.i18n.getMessage('openLinkInNewPrivateWindow'),
         contexts: ['link'],
-        parentId: 'incognito-selection'
+        parentId: rootMenuItemId
     });
 }
 
