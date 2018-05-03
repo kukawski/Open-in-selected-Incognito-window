@@ -59,10 +59,10 @@ if (browser.menus.onShown && browser.menus.refresh) {
         browser.menus.refresh();
     });
 } else {
-    browser.windows.onCreated.addListener(() => populateContextMenu());
-    browser.windows.onRemoved.addListener(() => populateContextMenu());
-    browser.tabs.onActivated.addListener(() => populateContextMenu());
-    browser.tabs.onUpdated.addListener(() => populateContextMenu());
+    browser.windows.onCreated.addListener(populateContextMenu);
+    browser.windows.onRemoved.addListener(populateContextMenu);
+    browser.tabs.onActivated.addListener(populateContextMenu);
+    browser.tabs.onUpdated.addListener(populateContextMenu);
 
     populateContextMenu();
 }
