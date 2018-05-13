@@ -6,7 +6,7 @@
         "message": "Neuer Eintrag im Kontextmenü für Links welcher ermöglicht die Auswahl eines privaten Fensters in dem Link geöffnet wird."
     },
     "openLinkInSelectedPrivateWindow": {
-        "message": "Link in privaten Fenster öffnen"
+        "message": "Link im privaten Fenster öffnen"
     },
     "openLinkInNewPrivateWindow": {
         "message": "Link in neuem privaten Fenster öffnen"
