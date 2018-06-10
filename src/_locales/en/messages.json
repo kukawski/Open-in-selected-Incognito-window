@@ -10,5 +10,14 @@
     },
     "openLinkInNewPrivateWindow": {
         "message": "Open Link in New Private Window"
+    },
+    "openLinkIn": {
+        "message": "Open link in \"$1\""
+    },
+    "includeNormalWindows": {
+        "message": "Include normal windows"
+    },
+    "unnestSingleWindow": {
+        "message": "Don't nest single window in context menu"
     }
 }

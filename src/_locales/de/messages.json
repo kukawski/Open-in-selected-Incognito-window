@@ -10,5 +10,14 @@
     },
     "openLinkInNewPrivateWindow": {
         "message": "Link in neuem privaten Fenster öffnen"
+    },
+    "openLinkIn": {
+        "message": "Link im \"$1\" öffnen"
+    },
+    "includeNormalWindows": {
+        "message": "Liste auch normale Fenster"
+    },
+    "unnestSingleWindow": {
+        "message": "Kein Untermenü für einzelnes Fenster"
     }
 }

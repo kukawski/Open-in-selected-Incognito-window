@@ -10,5 +10,14 @@
     },
     "openLinkInNewPrivateWindow": {
         "message": "Otwórz odnośnik w nowym oknie w trybie prywatnym"
+    },
+    "openLinkIn": {
+        "message": "Otwórz odnośnik w \"$1\""
+    },
+    "includeNormalWindows": {
+        "message": "Listuj też zwykłe okna"
+    },
+    "unnestSingleWindow": {
+        "message": "Nie twórz sub-menu dla pojedynczego okna"
     }
 }

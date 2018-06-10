@@ -1,42 +1,63 @@
+const getTitle = (window) => window.incognito ? window.title.replace(/ ?-[^-]+$/, '') : window.title;
+
 const populateContextMenu = async () => {
     await browser.menus.removeAll();
+
+    const defaultSettings = {
+        includeNormalWindows: false,
+        unnestSingleWindow: false
+    };
+
+    const userSettings = await browser.storage.local.get(defaultSettings);
 
     let windows = await browser.windows.getAll({
         windowTypes: ['normal']
     });
 
-    windows = windows.filter(w => w.incognito);
+    if (!userSettings.includeNormalWindows) {
+        windows = windows.filter(w => w.incognito);
+    }
 
-    const rootMenuItemId = browser.contextMenus.create({
-        id: `incognito-selection`,
-        title: browser.i18n.getMessage('openLinkInSelectedPrivateWindow'),
-        contexts: ['link']
-    });
+    if (userSettings.unnestSingleWindow && windows.length === 1) {
+        const window = windows[0];
 
-    if (windows.length) {
-        windows.forEach((window) => {
+        browser.contextMenus.create({
+            id: `incognito-selection-window-${window.id}`,
+            title: browser.i18n.getMessage('openLinkIn', getTitle(window)),
+            contexts: ['link']
+        });
+    } else {
+        const rootMenuItemId = browser.contextMenus.create({
+            id: `incognito-selection`,
+            title: browser.i18n.getMessage('openLinkInSelectedPrivateWindow'),
+            contexts: ['link']
+        });
+
+        if (windows.length) {
+            windows.forEach((window) => {
+                browser.contextMenus.create({
+                    id: `incognito-selection-window-${window.id}`,
+                    title: getTitle(window),
+                    contexts: ['link'],
+                    parentId: rootMenuItemId
+                });
+            });
+
             browser.contextMenus.create({
-                id: `incognito-selection-window-${window.id}`,
-                title: `${window.title.replace(/ ?-[^-]+$/, '')}`,
+                id: 'separator',
+                type: 'separator',
                 contexts: ['link'],
                 parentId: rootMenuItemId
             });
-        });
+        }
 
         browser.contextMenus.create({
-            id: 'separator',
-            type: 'separator',
+            id: `new-incognito-window`,
+            title: browser.i18n.getMessage('openLinkInNewPrivateWindow'),
             contexts: ['link'],
             parentId: rootMenuItemId
         });
     }
-
-    browser.contextMenus.create({
-        id: `new-incognito-window`,
-        title: browser.i18n.getMessage('openLinkInNewPrivateWindow'),
-        contexts: ['link'],
-        parentId: rootMenuItemId
-    });
 }
 
 browser.menus.onClicked.addListener((info, tab) => {

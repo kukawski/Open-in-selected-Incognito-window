@@ -5,7 +5,7 @@
     "description": "__MSG_extensionDescription__",
     "author": "Rafał Kukawski",
     "permissions": [
-        "tabs", "menus", "contextMenus"
+        "tabs", "menus", "contextMenus", "storage"
     ],
     "background": {
         "scripts": [
@@ -16,5 +16,9 @@
         "48": "icon.svg",
         "96": "icon.svg"
     },
-    "default_locale": "en"
+    "default_locale": "en",
+    "options_ui": {
+        "page": "settings.html",
+        "browser_style": true
+    }
 }
