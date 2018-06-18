@@ -85,6 +85,11 @@ browser.menus.onClicked.addListener((info, tab) => {
             incognito: true,
             url: info.linkUrl
         });
+    } else if (info.menuItemId === 'new-normal-window') {
+        browser.windows.create({
+            incognito: false,
+            url: info.linkUrl
+        });
     }
 });
 
