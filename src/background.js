@@ -34,18 +34,32 @@ const populateContextMenu = async () => {
         });
 
         if (windows.length) {
+            const incognitoIcon = {
+                '16': 'incognito.svg'
+            };
+
             windows.forEach((window) => {
                 browser.contextMenus.create({
                     id: `incognito-selection-window-${window.id}`,
                     title: getTitle(window),
                     contexts: ['link'],
-                    parentId: rootMenuItemId
+                    parentId: rootMenuItemId,
+                    icons: userSettings.includeNormalWindows && window.incognito ? incognitoIcon : null
                 });
             });
 
             browser.contextMenus.create({
                 id: 'separator',
                 type: 'separator',
+                contexts: ['link'],
+                parentId: rootMenuItemId
+            });
+        }
+
+        if (userSettings.includeNormalWindows) {
+            browser.contextMenus.create({
+                id: `new-normal-window`,
+                title: browser.i18n.getMessage('openLinkInNewWindow'),
                 contexts: ['link'],
                 parentId: rootMenuItemId
             });

@@ -14,6 +14,9 @@
     "openLinkIn": {
         "message": "Otwórz odnośnik w \"$1\""
     },
+    "openLinkInNewWindow": {
+        "message": "Otwórz odnośnik w nowym oknie"
+    },
     "includeNormalWindows": {
         "message": "Listuj też zwykłe okna"
     },

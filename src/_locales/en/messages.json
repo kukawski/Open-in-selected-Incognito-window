@@ -12,7 +12,10 @@
         "message": "Open Link in New Private Window"
     },
     "openLinkIn": {
-        "message": "Open link in \"$1\""
+        "message": "Open Link in \"$1\""
+    },
+    "openLinkInNewWindow": {
+        "message": "Open Link in New Window"
     },
     "includeNormalWindows": {
         "message": "Include normal windows"
