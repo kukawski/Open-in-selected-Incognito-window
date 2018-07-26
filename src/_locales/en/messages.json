@@ -18,7 +18,7 @@
         "message": "Open Link in New Window"
     },
     "includeNormalWindows": {
-        "message": "Include normal windows"
+        "message": "Include normal windows in the list"
     },
     "unnestSingleWindow": {
         "message": "Don't nest single window in context menu"
