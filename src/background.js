@@ -1,14 +1,19 @@
 const getTitle = (window) => window.incognito ? window.title.replace(/ ?-[^-]+$/, '') : window.title;
 
+const getUserSettings = async () => {
+    const defaultSettings = {
+        includeNormalWindows: false,
+        unnestSingleWindow: false,
+        activateTab: true
+    };
+
+    return browser.storage.local.get(defaultSettings);;
+}
+
 const populateContextMenu = async () => {
     await browser.menus.removeAll();
 
-    const defaultSettings = {
-        includeNormalWindows: false,
-        unnestSingleWindow: false
-    };
-
-    const userSettings = await browser.storage.local.get(defaultSettings);
+    const userSettings = await getUserSettings();
 
     let windows = await browser.windows.getAll({
         windowTypes: ['normal']
@@ -74,11 +79,14 @@ const populateContextMenu = async () => {
     }
 }
 
-browser.menus.onClicked.addListener((info, tab) => {
+browser.menus.onClicked.addListener(async (info, tab) => {
     if (info.menuItemId.startsWith('incognito-selection-window-')) {
+        const { activateTab } = await getUserSettings();
+
         browser.tabs.create({
             url: info.linkUrl,
-            windowId: +info.menuItemId.substr('incognito-selection-window-'.length)
+            windowId: +info.menuItemId.substr('incognito-selection-window-'.length),
+            active: activateTab
         });
     } else if (info.menuItemId === 'new-incognito-window') {
         browser.windows.create({

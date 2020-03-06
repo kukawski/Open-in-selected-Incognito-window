@@ -22,5 +22,8 @@
     },
     "unnestSingleWindow": {
         "message": "Nie twórz sub-menu dla pojedynczego okna"
+    },
+    "activateTab": {
+        "message": "Aktywuj otwierane karty"
     }
 }

@@ -22,5 +22,8 @@
     },
     "unnestSingleWindow": {
         "message": "Kein Untermenü für einzelnes Fenster"
+    },
+    "activateTab": {
+        "message": "Aktiviere geöffnete Karten"
     }
 }

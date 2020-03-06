@@ -22,5 +22,8 @@
     },
     "unnestSingleWindow": {
         "message": "Don't nest single window in context menu"
+    },
+    "activateTab": {
+        "message": "Activate opened tabs"
     }
 }
