@@ -10,7 +10,7 @@
     const defaultSettings = {
         includeNormalWindows: false,
         unnestSingleWindow: false,
-        activateTab: true
+        activateTab: false
     };
 
     const userSettings = await browser.storage.local.get(defaultSettings);
