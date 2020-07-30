@@ -25,5 +25,8 @@
     },
     "activateTab": {
         "message": "Aktywuj otwierane karty"
+    },
+    "excludeCurrentWindow": {
+        "message": "Pomiń bieżące okno w menu kontekstowym"
     }
 }

@@ -25,5 +25,8 @@
     },
     "activateTab": {
         "message": "Activate opened tabs"
+    },
+    "excludeCurrentWindow": {
+        "message": "Exclude current window from context menu"
     }
 }

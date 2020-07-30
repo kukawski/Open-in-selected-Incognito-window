@@ -4,7 +4,8 @@ const getUserSettings = async () => {
     const defaultSettings = {
         includeNormalWindows: false,
         unnestSingleWindow: false,
-        activateTab: false
+        activateTab: false,
+        excludeCurrentWindow: false
     };
 
     return browser.storage.local.get(defaultSettings);;
@@ -19,8 +20,16 @@ const populateContextMenu = async () => {
         windowTypes: ['normal']
     });
 
+    console.log("windows", windows.length);
+
     if (!userSettings.includeNormalWindows) {
         windows = windows.filter(w => w.incognito);
+    }
+
+    if (userSettings.excludeCurrentWindow) {
+        const currentWindow = await browser.windows.getCurrent();
+
+        windows = windows.filter(w => w.id !== currentWindow.id);
     }
 
     if (userSettings.unnestSingleWindow && windows.length === 1) {

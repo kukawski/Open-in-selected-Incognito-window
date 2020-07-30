@@ -25,5 +25,8 @@
     },
     "activateTab": {
         "message": "Aktiviere geöffnete Karten"
+    },
+    "excludeCurrentWindow": {
+        "message": "Aktuelles Fenster vom Kontextmenü ausschließen"
     }
 }
