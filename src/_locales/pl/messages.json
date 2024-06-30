@@ -30,7 +30,7 @@
     "message": "Pomiń bieżące okno w menu kontekstowym"
   },
   "allowIncognito": {
-    "message": "↑ Zezwól na pracę w trybie prywatnym, żeby móc zarządzać prywatnymi oknami. Kliknij zakładkę \"Szczegóły\" i wybierz \"Zezwól\" obok \"Działaj w prywatnych oknach\"."
+    "message": "↑ Zezwól na pracę w trybie prywatnym, żeby móc zarządzać prywatnymi oknami. Kliknij zakładkę \"Szczegóły\" i wybierz \"Zezwalaj\" obok \"Działanie w oknach prywatnych\"."
   },
   "allowToRunInPrivateMode": {
     "message": "Zezwól na pracę w trybie prywatnym"
