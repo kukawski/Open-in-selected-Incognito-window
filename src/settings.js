@@ -1,5 +1,5 @@
 (async function () {
-  document.querySelector("form").addEventListener("change", (event) => {
+  document.querySelector("form").addEventListener("change", () => {
     browser.storage.local.set({
       includeNormalWindows: document.getElementById("includeNormalWindows")
         .checked,
@@ -18,6 +18,7 @@
   };
 
   const userSettings = await browser.storage.local.get(defaultSettings);
+  const allowedInIncognito = await browser.extension.isAllowedIncognitoAccess();
 
   document.getElementById("includeNormalWindows").checked =
     userSettings.includeNormalWindows;
@@ -26,4 +27,7 @@
   document.getElementById("activateTab").checked = userSettings.activateTab;
   document.getElementById("excludeCurrentWindow").checked =
     userSettings.excludeCurrentWindow;
+  document
+    .getElementById("allow-incognito")
+    .classList.toggle("visible", !allowedInIncognito);
 })();

@@ -15,13 +15,12 @@ const getUserSettings = async () => {
 const populateContextMenu = async () => {
   await browser.menus.removeAll();
 
+  const allowedInIncognito = await browser.extension.isAllowedIncognitoAccess();
   const userSettings = await getUserSettings();
 
   let windows = await browser.windows.getAll({
     windowTypes: ["normal"],
   });
-
-  console.log("windows", windows.length);
 
   if (!userSettings.includeNormalWindows) {
     windows = windows.filter((w) => w.incognito);
@@ -34,7 +33,7 @@ const populateContextMenu = async () => {
   }
 
   if (userSettings.unnestSingleWindow && windows.length === 1) {
-    const window = windows[0];
+    const window = windows.at(0);
 
     browser.contextMenus.create({
       id: `incognito-selection-window-${window.id}`,
@@ -43,7 +42,7 @@ const populateContextMenu = async () => {
     });
   } else {
     const rootMenuItemId = browser.contextMenus.create({
-      id: `incognito-selection`,
+      id: "incognito-selection",
       title: browser.i18n.getMessage("openLinkInSelectedPrivateWindow"),
       contexts: ["link"],
     });
@@ -76,29 +75,40 @@ const populateContextMenu = async () => {
 
     if (userSettings.includeNormalWindows) {
       browser.contextMenus.create({
-        id: `new-normal-window`,
+        id: "new-normal-window",
         title: browser.i18n.getMessage("openLinkInNewWindow"),
         contexts: ["link"],
         parentId: rootMenuItemId,
       });
     }
 
-    browser.contextMenus.create({
-      id: `new-incognito-window`,
-      title: browser.i18n.getMessage("openLinkInNewPrivateWindow"),
-      contexts: ["link"],
-      parentId: rootMenuItemId,
-    });
+    if (allowedInIncognito) {
+      browser.contextMenus.create({
+        id: `new-incognito-window`,
+        title: browser.i18n.getMessage("openLinkInNewPrivateWindow"),
+        contexts: ["link"],
+        parentId: rootMenuItemId,
+      });
+    } else {
+      browser.contextMenus.create({
+        id: "incognito-not-allowed",
+        title: browser.i18n.getMessage("allowToRunInPrivateMode"),
+        contexts: ["link"],
+        parentId: rootMenuItemId,
+      });
+    }
   }
 };
 
 browser.menus.onClicked.addListener(async (info, tab) => {
-  if (info.menuItemId.startsWith("incognito-selection-window-")) {
+  const prefix = "incognito-selection-window-";
+
+  if (info.menuItemId.startsWith(prefix)) {
     const { activateTab } = await getUserSettings();
 
     browser.tabs.create({
       url: info.linkUrl,
-      windowId: +info.menuItemId.substr("incognito-selection-window-".length),
+      windowId: +info.menuItemId.substr(prefix.length),
       active: activateTab,
     });
   } else if (info.menuItemId === "new-incognito-window") {
@@ -111,6 +121,8 @@ browser.menus.onClicked.addListener(async (info, tab) => {
       incognito: false,
       url: info.linkUrl,
     });
+  } else if (info.menuItemId === "incognito-not-allowed") {
+    browser.runtime.openOptionsPage();
   }
 });
 

@@ -14,10 +14,20 @@
         padding: 0.5em;
         border: inherit;
       }
+
+      #allow-incognito {
+        display: none;
+        color: red;
+      }
+
+      #allow-incognito.visible {
+        display: block;
+      }
     </style>
   </head>
   <body>
     <form>
+      <p id="allow-incognito" data-i18n="allowIncognito"></p>
       <fieldset class="browser-style">
         <div class="browser-style">
           <input type="checkbox" name="activateTab" id="activateTab" />

@@ -28,5 +28,11 @@
   },
   "excludeCurrentWindow": {
     "message": "Aktuelles Fenster vom Kontextmenü ausschließen"
+  },
+  "allowIncognito": {
+    "message": "↑ Erlaube Ausführung im privaten Modus, so dass es ist möglich private Fenster zu verwalten. Klicke \"Details\" und wähle \"Erlaub\" neben \"Run in Private Windows\"."
+  },
+  "allowToRunInPrivateMode": {
+    "message": "Erlaube Ausführung im privaten Modus"
   }
 }

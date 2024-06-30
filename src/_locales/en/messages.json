@@ -28,5 +28,11 @@
   },
   "excludeCurrentWindow": {
     "message": "Exclude current window from context menu"
+  },
+  "allowIncognito": {
+    "message": "↑ Allow the add-on to work in private mode, so it can manage and list private windows. Click the \"Details\" tab and select the \"Allow\" next to \"Run in Private Windows\"."
+  },
+  "allowToRunInPrivateMode": {
+    "message": "Allow to run in private mode"
   }
 }

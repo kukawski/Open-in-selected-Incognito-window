@@ -28,5 +28,11 @@
   },
   "excludeCurrentWindow": {
     "message": "Pomiń bieżące okno w menu kontekstowym"
+  },
+  "allowIncognito": {
+    "message": "↑ Zezwól na pracę w trybie prywatnym, żeby móc zarządzać prywatnymi oknami. Kliknij zakładkę \"Szczegóły\" i wybierz \"Zezwól\" obok \"Działaj w prywatnych oknach\"."
+  },
+  "allowToRunInPrivateMode": {
+    "message": "Zezwól na pracę w trybie prywatnym"
   }
 }
