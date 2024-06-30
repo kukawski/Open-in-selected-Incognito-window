@@ -1,32 +1,32 @@
 {
-    "extensionName": {
-        "message": "Open link in selected Private window"
-    },
-    "extensionDescription": {
-        "message": "New context menu entry for links which allows choosing a private window in which the link should be opened."
-    },
-    "openLinkInSelectedPrivateWindow": {
-        "message": "Open Link in Private Window"
-    },
-    "openLinkInNewPrivateWindow": {
-        "message": "Open Link in New Private Window"
-    },
-    "openLinkIn": {
-        "message": "Open Link in \"$1\""
-    },
-    "openLinkInNewWindow": {
-        "message": "Open Link in New Window"
-    },
-    "includeNormalWindows": {
-        "message": "Include normal windows in the list"
-    },
-    "unnestSingleWindow": {
-        "message": "Don't nest single window in context menu"
-    },
-    "activateTab": {
-        "message": "Activate opened tabs"
-    },
-    "excludeCurrentWindow": {
-        "message": "Exclude current window from context menu"
-    }
+  "extensionName": {
+    "message": "Open link in selected Private window"
+  },
+  "extensionDescription": {
+    "message": "New context menu entry for links which allows choosing a private window in which the link should be opened."
+  },
+  "openLinkInSelectedPrivateWindow": {
+    "message": "Open Link in Private Window"
+  },
+  "openLinkInNewPrivateWindow": {
+    "message": "Open Link in New Private Window"
+  },
+  "openLinkIn": {
+    "message": "Open Link in \"$1\""
+  },
+  "openLinkInNewWindow": {
+    "message": "Open Link in New Window"
+  },
+  "includeNormalWindows": {
+    "message": "Include normal windows in the list"
+  },
+  "unnestSingleWindow": {
+    "message": "Don't nest single window in context menu"
+  },
+  "activateTab": {
+    "message": "Activate opened tabs"
+  },
+  "excludeCurrentWindow": {
+    "message": "Exclude current window from context menu"
+  }
 }

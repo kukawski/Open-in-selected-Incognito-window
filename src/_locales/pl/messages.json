@@ -1,32 +1,32 @@
 {
-    "extensionName": {
-        "message": "Otwórz odnośnik w wybranym oknie prywatnym"
-    },
-    "extensionDescription": {
-        "message": "Nowa pozycja w menu kontekstowym dla odnośników pozwalająca wybrać prywatne okno, w którym odnośnik zostanie otwarty."
-    },
-    "openLinkInSelectedPrivateWindow": {
-        "message": "Otwórz odnośnik w oknie prywatnym"
-    },
-    "openLinkInNewPrivateWindow": {
-        "message": "Otwórz odnośnik w nowym oknie w trybie prywatnym"
-    },
-    "openLinkIn": {
-        "message": "Otwórz odnośnik w \"$1\""
-    },
-    "openLinkInNewWindow": {
-        "message": "Otwórz odnośnik w nowym oknie"
-    },
-    "includeNormalWindows": {
-        "message": "Listuj też zwykłe okna"
-    },
-    "unnestSingleWindow": {
-        "message": "Nie twórz sub-menu dla pojedynczego okna"
-    },
-    "activateTab": {
-        "message": "Aktywuj otwierane karty"
-    },
-    "excludeCurrentWindow": {
-        "message": "Pomiń bieżące okno w menu kontekstowym"
-    }
+  "extensionName": {
+    "message": "Otwórz odnośnik w wybranym oknie prywatnym"
+  },
+  "extensionDescription": {
+    "message": "Nowa pozycja w menu kontekstowym dla odnośników pozwalająca wybrać prywatne okno, w którym odnośnik zostanie otwarty."
+  },
+  "openLinkInSelectedPrivateWindow": {
+    "message": "Otwórz odnośnik w oknie prywatnym"
+  },
+  "openLinkInNewPrivateWindow": {
+    "message": "Otwórz odnośnik w nowym oknie w trybie prywatnym"
+  },
+  "openLinkIn": {
+    "message": "Otwórz odnośnik w \"$1\""
+  },
+  "openLinkInNewWindow": {
+    "message": "Otwórz odnośnik w nowym oknie"
+  },
+  "includeNormalWindows": {
+    "message": "Listuj też zwykłe okna"
+  },
+  "unnestSingleWindow": {
+    "message": "Nie twórz sub-menu dla pojedynczego okna"
+  },
+  "activateTab": {
+    "message": "Aktywuj otwierane karty"
+  },
+  "excludeCurrentWindow": {
+    "message": "Pomiń bieżące okno w menu kontekstowym"
+  }
 }

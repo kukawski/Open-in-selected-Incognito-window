@@ -1,32 +1,32 @@
 {
-    "extensionName": {
-        "message": "Öffne Link in gewähltem privaten Fenster"
-    },
-    "extensionDescription": {
-        "message": "Neuer Eintrag im Kontextmenü für Links welcher ermöglicht die Auswahl eines privaten Fensters in dem Link geöffnet wird."
-    },
-    "openLinkInSelectedPrivateWindow": {
-        "message": "Link im privaten Fenster öffnen"
-    },
-    "openLinkInNewPrivateWindow": {
-        "message": "Link in neuem privaten Fenster öffnen"
-    },
-    "openLinkIn": {
-        "message": "Link im \"$1\" öffnen"
-    },
-    "openLinkInNewWindow": {
-        "message": "Link in neuem Fenster öffnen"
-    },
-    "includeNormalWindows": {
-        "message": "Liste auch normale Fenster"
-    },
-    "unnestSingleWindow": {
-        "message": "Kein Untermenü für einzelnes Fenster"
-    },
-    "activateTab": {
-        "message": "Aktiviere geöffnete Karten"
-    },
-    "excludeCurrentWindow": {
-        "message": "Aktuelles Fenster vom Kontextmenü ausschließen"
-    }
+  "extensionName": {
+    "message": "Öffne Link in gewähltem privaten Fenster"
+  },
+  "extensionDescription": {
+    "message": "Neuer Eintrag im Kontextmenü für Links welcher ermöglicht die Auswahl eines privaten Fensters in dem Link geöffnet wird."
+  },
+  "openLinkInSelectedPrivateWindow": {
+    "message": "Link im privaten Fenster öffnen"
+  },
+  "openLinkInNewPrivateWindow": {
+    "message": "Link in neuem privaten Fenster öffnen"
+  },
+  "openLinkIn": {
+    "message": "Link im \"$1\" öffnen"
+  },
+  "openLinkInNewWindow": {
+    "message": "Link in neuem Fenster öffnen"
+  },
+  "includeNormalWindows": {
+    "message": "Liste auch normale Fenster"
+  },
+  "unnestSingleWindow": {
+    "message": "Kein Untermenü für einzelnes Fenster"
+  },
+  "activateTab": {
+    "message": "Aktiviere geöffnete Karten"
+  },
+  "excludeCurrentWindow": {
+    "message": "Aktuelles Fenster vom Kontextmenü ausschließen"
+  }
 }
